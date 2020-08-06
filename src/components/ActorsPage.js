@@ -3,6 +3,7 @@ import LiveSearchBox from './LiveSearchBox';
 import { Container, Row, Col } from 'react-bootstrap';
 import './ActorsPage.css'
 import ActorCard from './ActorCard'
+import axios from 'axios'
 
 
 class ActorsPage extends React.Component {
@@ -24,6 +25,14 @@ class ActorsPage extends React.Component {
     // This function should be invoked each time the search text is changed
     searchActors(searchText) {
         
+        // Calling the TMDB API to get the result for the given searchText
+        const URL = "https://api.themoviedb.org/3/search/person?api_key=53d2ee2137cf3228aefae083c8158855&query=" + searchText;
+
+        axios.get(URL).then(response => {
+            console.log(response.data);
+        })
+
+
         if (searchText) {
             this.setState({
                 searchResults: this.state.searchResults.concat(searchText)
