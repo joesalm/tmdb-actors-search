@@ -7,12 +7,8 @@ import './ActorsPage.css'
 class ActorsPage extends React.Component {
 
 
-    // This function should be invoked each time the search text is changed
-    searchActors(searchText) {
-        console.log(searchText);
-    }
-
-    render() {
+    constructor(props) {
+        super(props);
 
         const results = [
             "Result 1",
@@ -21,10 +17,30 @@ class ActorsPage extends React.Component {
             "Result 4",
         ];
 
+        this.state = {
+            searchResults: results
+        }
+
+        this.searchActors = this.searchActors.bind(this);
+    }
+
+
+    // This function should be invoked each time the search text is changed
+    searchActors(searchText) {
+        
+        this.setState({
+            searchResults: this.state.searchResults.concat(searchText)
+        })
+    }
+
+    render() {
+
+        const {searchResults} = this.state
+
         return (
             <div className="p-actors">
                 <Container>
-                    <LiveSearchBox placeholderText="Search Actor Name" results={results}
+                    <LiveSearchBox placeholderText="Search Actor Name" results={searchResults}
                         searchTextChanged={this.searchActors}/>
                     <p>bla bla bla</p>
                 </Container>
