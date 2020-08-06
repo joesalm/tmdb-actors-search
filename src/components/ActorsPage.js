@@ -2,6 +2,7 @@ import React from 'react';
 import LiveSearchBox from './LiveSearchBox';
 import { Container, Row, Col } from 'react-bootstrap';
 import './ActorsPage.css'
+import ActorCard from './ActorCard'
 
 
 class ActorsPage extends React.Component {
@@ -48,7 +49,7 @@ class ActorsPage extends React.Component {
 
         const actorsView = actors.map(actor => 
             <Col lg={3} md={4} sm={6}>
-                {actor}
+                <ActorCard actor={actor}/>
             </Col>)
 
         return (
