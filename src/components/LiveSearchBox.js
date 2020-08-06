@@ -40,12 +40,12 @@ class LiveSearchBox extends React.Component {
 
     render() {
         // Extracting props and state
-        const { placeholderText, results } = this.props;
+        const { placeholderText, results, resultSelected } = this.props;
         const { searchText } = this.state;
 
         // Create an array of ListGroup.Item from the results array
         const listGroupItems = results.map((result, index) => 
-            <ListGroup.Item key={index} action>{result}</ListGroup.Item>);
+            <ListGroup.Item key={index} action onClick={() => resultSelected(index)}>{result}</ListGroup.Item>);
 
 
         return (

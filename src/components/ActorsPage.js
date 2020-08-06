@@ -15,6 +15,7 @@ class ActorsPage extends React.Component {
         }
 
         this.searchActors = this.searchActors.bind(this);
+        this.addActor = this.addActor.bind(this);
     }
 
 
@@ -32,6 +33,10 @@ class ActorsPage extends React.Component {
         }
     }
 
+    addActor(index) {
+        alert(this.state.searchResults[index]);
+    }
+
     render() {
 
         const {searchResults} = this.state
@@ -40,7 +45,7 @@ class ActorsPage extends React.Component {
             <div className="p-actors">
                 <Container>
                     <LiveSearchBox placeholderText="Search Actor Name" results={searchResults}
-                        searchTextChanged={this.searchActors}/>
+                        searchTextChanged={this.searchActors} resultSelected={this.addActor}/>
                     <p>bla bla bla</p>
                 </Container>
             </div>
