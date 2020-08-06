@@ -1,5 +1,6 @@
 import React from 'react';
 import LiveSearchBox from './LiveSearchBox';
+import { Container } from 'react-bootstrap';
 
 
 class ActorsPage extends React.Component {
@@ -7,7 +8,9 @@ class ActorsPage extends React.Component {
     render() {
         return (
             <div className="p-actors">
-                <LiveSearchBox placeholderText="Search Actor Name"/>
+                <Container>
+                    <LiveSearchBox placeholderText="Search Actor Name"/>
+                </Container>
             </div>
         )
     }

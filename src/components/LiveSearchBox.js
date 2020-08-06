@@ -1,4 +1,5 @@
 import React from 'react';
+import { Form } from 'react-bootstrap';
 
 
 // This component is a genreic search box that shows results immediatly 
@@ -27,7 +28,8 @@ class LiveSearchBox extends React.Component {
 
         return (
             <div className="c-live-search-box">
-                <input type="search" placeholder={placeholderText}/>
+                <Form.Control type="search" placeholder={placeholderText}/>
+                {/* <input type="search" placeholder={placeholderText}/> */}
             </div>
         )
     }
