@@ -7,7 +7,7 @@ class ActorsPage extends React.Component {
     render() {
         return (
             <div className="p-actors">
-                <LiveSearchBox/>
+                <LiveSearchBox placeholderText="Search Actor Name"/>
             </div>
         )
     }
