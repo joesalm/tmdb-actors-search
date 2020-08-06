@@ -1,4 +1,5 @@
 import React from 'react';
+import LiveSearchBox from './LiveSearchBox';
 
 
 class ActorsPage extends React.Component {
@@ -6,7 +7,7 @@ class ActorsPage extends React.Component {
     render() {
         return (
             <div className="p-actors">
-                Actors Page
+                <LiveSearchBox/>
             </div>
         )
     }
