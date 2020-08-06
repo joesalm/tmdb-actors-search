@@ -6,6 +6,12 @@ import './ActorsPage.css'
 
 class ActorsPage extends React.Component {
 
+
+    // This function should be invoked each time the search text is changed
+    searchActors(searchText) {
+        console.log(searchText);
+    }
+
     render() {
 
         const results = [
@@ -18,7 +24,8 @@ class ActorsPage extends React.Component {
         return (
             <div className="p-actors">
                 <Container>
-                    <LiveSearchBox placeholderText="Search Actor Name" results={results}/>
+                    <LiveSearchBox placeholderText="Search Actor Name" results={results}
+                        searchTextChanged={this.searchActors}/>
                     <p>bla bla bla</p>
                 </Container>
             </div>

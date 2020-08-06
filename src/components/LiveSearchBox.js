@@ -19,20 +19,39 @@ class LiveSearchBox extends React.Component {
 
     constructor(props) {
         super(props);
+
+        this.state = {
+            searchText: ""
+        }
+
+        this.handleInputChange = this.handleInputChange.bind(this);
+    }
+
+
+    handleInputChange(event) {
+        // Updating the internal state of the component with the new searchText
+        this.setState({
+            searchText: event.target.value
+        });
+
+        // Triggering an event that the search text has changed
+        this.props.searchTextChanged(event.target.value);
     }
 
     render() {
         // Extracting props and state
         const { placeholderText, results } = this.props;
+        const { searchText } = this.state;
 
         // Create an array of ListGroup.Item from the results array
-        const listGroupItems = results.map(result => 
-            <ListGroup.Item action>{result}</ListGroup.Item>);
+        const listGroupItems = results.map((result, index) => 
+            <ListGroup.Item key={index} action>{result}</ListGroup.Item>);
 
 
         return (
             <div className="c-live-search-box">
-                <Form.Control type="search" placeholder={placeholderText}/>
+                <Form.Control type="search" placeholder={placeholderText} value={searchText} 
+                    onChange={this.handleInputChange}/>
                 <ListGroup className="search-results">
                     {listGroupItems}
                 </ListGroup>
