@@ -1,6 +1,7 @@
 import React from 'react';
 import LiveSearchBox from './LiveSearchBox';
 import { Container } from 'react-bootstrap';
+import './ActorsPage.css'
 
 
 class ActorsPage extends React.Component {
