@@ -23,18 +23,18 @@ class LiveSearchBox extends React.Component {
 
     render() {
         // Extracting props and state
-        const { placeholderText } = this.props;
+        const { placeholderText, results } = this.props;
+
+        // Create an array of ListGroup.Item from the results array
+        const listGroupItems = results.map(result => 
+            <ListGroup.Item action>{result}</ListGroup.Item>);
 
 
         return (
             <div className="c-live-search-box">
                 <Form.Control type="search" placeholder={placeholderText}/>
                 <ListGroup className="search-results">
-                    <ListGroup.Item action>Cras justo odio</ListGroup.Item>
-                    <ListGroup.Item action>Dapibus ac facilisis in</ListGroup.Item>
-                    <ListGroup.Item action>Morbi leo risus</ListGroup.Item>
-                    <ListGroup.Item action>Porta ac consectetur ac</ListGroup.Item>
-                    <ListGroup.Item action>Vestibulum at eros</ListGroup.Item>
+                    {listGroupItems}
                 </ListGroup>
                 {/* <input type="search" placeholder={placeholderText}/> */}
             </div>
