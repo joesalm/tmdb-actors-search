@@ -4,6 +4,7 @@ import { Container, Row, Col } from 'react-bootstrap';
 import './ActorsPage.css'
 import ActorCard from './ActorCard'
 import axios from 'axios'
+import ActorModel from '../model/ActorModel'
 
 
 class ActorsPage extends React.Component {
@@ -47,8 +48,13 @@ class ActorsPage extends React.Component {
     }
 
     addActor(index) {
+
+        const actorName =  this.state.searchResults[index].name;
+        const actorImage = this.state.searchResults[index].profile_path
+
+    
         this.setState({
-            actors: this.state.actors.concat(this.state.searchResults[index]),
+            actors: this.state.actors.concat(new ActorModel(actorName, actorImage)),
             searchResults: []
         })
     }
