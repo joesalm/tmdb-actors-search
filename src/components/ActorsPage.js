@@ -10,15 +10,8 @@ class ActorsPage extends React.Component {
     constructor(props) {
         super(props);
 
-        const results = [
-            "Result 1",
-            "Result 2",
-            "Result 3",
-            "Result 4",
-        ];
-
         this.state = {
-            searchResults: results
+            searchResults: []
         }
 
         this.searchActors = this.searchActors.bind(this);
@@ -28,9 +21,15 @@ class ActorsPage extends React.Component {
     // This function should be invoked each time the search text is changed
     searchActors(searchText) {
         
-        this.setState({
-            searchResults: this.state.searchResults.concat(searchText)
-        })
+        if (searchText) {
+            this.setState({
+                searchResults: this.state.searchResults.concat(searchText)
+            })    
+        } else {
+            this.setState({
+                searchResults: []
+            })   
+        }
     }
 
     render() {
