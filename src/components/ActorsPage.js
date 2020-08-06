@@ -11,6 +11,7 @@ class ActorsPage extends React.Component {
             <div className="p-actors">
                 <Container>
                     <LiveSearchBox placeholderText="Search Actor Name"/>
+                    <p>bla bla bla</p>
                 </Container>
             </div>
         )

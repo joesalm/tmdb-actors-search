@@ -1,0 +1,9 @@
+
+.c-live-search-box {
+    position: relative;
+}
+
+.c-live-search-box > .search-results {
+    position: absolute;
+    width: 100%;
+}
